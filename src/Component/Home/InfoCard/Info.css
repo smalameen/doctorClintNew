@@ -1,0 +1,11 @@
+.info-primary {
+    background-color: #1cc7c1;
+}
+.info-dark{
+    background-color: #3a3a3a;
+}
+.info-container{
+    height:120px;
+    padding: 40px;
+    border-radius: 5px;
+}

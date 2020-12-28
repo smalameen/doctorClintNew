@@ -1,0 +1,14 @@
+.doctorStyle::before{
+    content:' ';
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: #3A4256;
+   
+}
+
+.doctorStyle img{
+    transform:translateY(-10rem);
+}
