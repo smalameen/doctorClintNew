@@ -1,6 +1,6 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import '../node_modules/font-awesome/css/font-awesome.min.css'; 
 import {
   BrowserRouter as Router,
   Switch,
@@ -11,6 +11,8 @@ import Home from './Component/Home/Home';
 import 'react-calendar/dist/Calendar.css';
 import '../node_modules/font-awesome/css/font-awesome.min.css';
 import Appointment from './Component/MainAppoint/Appointment/Appointment';
+import Dashboard from './Component/Dashboard/Dashboard';
+import AddDoctor from './Component/AddDoctor/AddDoctor';
 function App() {
   return (
     <Router>
@@ -21,11 +23,14 @@ function App() {
             <Home />
           </Route>
           <Route path="/appointment">
-           <Appointment/>
+           <Appointment />
           </Route>
-          {/* <Route path="/AppointmentFrom">
-           <AppointmentFrom/>
-         </Route> */}
+          <Route path="/dashboard/appointment">
+           <Dashboard/>
+          </Route>
+          <Route path="/addDoctor">
+           <AddDoctor/>
+          </Route>
           <Route path="*">
             <Home />
           </Route>

@@ -2,9 +2,18 @@ import React from 'react'
 import 'react-responsive-modal/styles.css'
 import { useForm } from 'react-hook-form'
 import { Modal } from 'react-responsive-modal'
+import { useHistory } from 'react-router-dom'
 
-const AppointmentFrom = ({ onCloseModal, open, onOpenModal }) => {
-  const { register, handleSubmit, errors } = useForm()
+const AppointmentFrom = ({ onCloseModal, open, onOpenModal, date }) => {
+  const { register, handleSubmit, errors } = useForm();
+
+  console.log(date);
+
+  const history = useHistory();
+
+  const goToDashBoard =()=>{
+    history.push('/dashboard/appointment')
+  }
 
   const onSubmit = (data) => {
     fetch('http://localhost:5001/userAppointment', {
@@ -15,16 +24,19 @@ const AppointmentFrom = ({ onCloseModal, open, onOpenModal }) => {
       .then((res) => res.json())
       .then((success) => {
         if (success) {
-          alert('Appointment created successfully!')
+          alert('Are you sure to send data')
           onCloseModal();
+          goToDashBoard();
         }
       })
+      
   }
 
   return (
     <div>
       <Modal open={open} center>
         <h3>Please provide your necessary information</h3>
+        
         <div
           style={{
             backgroundColor: '#3A4256',
@@ -33,6 +45,19 @@ const AppointmentFrom = ({ onCloseModal, open, onOpenModal }) => {
           }}
         >
           <form onSubmit={handleSubmit(onSubmit)}>
+             <input
+              type="text"
+              style={{
+                height: '50px',
+                width: '100%',
+                borderRadius: '5px',
+                border: 'none',
+              }}
+              name="date"
+              ref={register({ required: true })}
+              defaultValue={date.toDateString()}
+             
+            />  <br /> <br />
             <input
               type="text"
               style={{
@@ -44,7 +69,7 @@ const AppointmentFrom = ({ onCloseModal, open, onOpenModal }) => {
               name="name"
               ref={register({ required: true })}
               placeholder="Patient Name"
-            />{' '}
+            />
             <br /> <br />
             {errors.exampleRequired && <span>This field is required</span>}
             <input

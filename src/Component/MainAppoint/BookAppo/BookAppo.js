@@ -50,10 +50,17 @@ const bookingData = [
 
 const BookAppo = ({time,date}) => {
     return (
-        <div style={{alignItems:"center"}} className="row d-flex justify-content-center container">
+        <div>
+
+<h1 style={{textAlign:"center"}}> Book Your appointment on <span style={{color:"#1cc7c1"}}>{date.toDateString()}</span></h1>
+
+        <div style={{alignItems:"center"}} className="row d-flex justify-content-center p-3">
+            
             {
                 bookingData.map(booking =><BookingCard date={date} booking={booking}>  </BookingCard>)
             }
+           
+        </div>
         </div>
     );
 };

@@ -9,16 +9,16 @@ const BookingCard = ({ booking, date }) => {
   const onOpenModal = () => setOpen(true);
   const onCloseModal = () => setOpen(false);
 
-
-
-
   return (
-    <div>
+    <div className="d-flex justify-content-center bg-dark">
       <Card style={{width: '18rem', margin:"1rem", alignItems:"center"}}>
         <Card.Body>
           <Card.Title>{booking.subject}</Card.Title>
           <Card.Text>
             {booking.time}
+          </Card.Text>
+          <Card.Text>
+          {date.toDateString()}
           </Card.Text>
           <Card.Text>
           {booking.date}
@@ -32,7 +32,7 @@ const BookingCard = ({ booking, date }) => {
           <Button onClick={() => onOpenModal()}  variant="primary">Book Now</Button>
         </Card.Body>
       </Card>
-      <AppointmentFrom onCloseModal={onCloseModal} open={open}/>
+      <AppointmentFrom date={date} onCloseModal={onCloseModal} open={open}/>
       <div>
       </div>
     </div>

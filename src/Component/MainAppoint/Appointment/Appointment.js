@@ -8,14 +8,15 @@ import Main from '../Main/Main';
 
 const Appointment = () => {
     const [selectTheDate, setSelectTheDate] = useState(new Date());
-   let handleDate = date => {
+   const handleDate = date => {
         setSelectTheDate(date);
+        
     }
     return (
         <div>
             <Main handleDate={handleDate}/>
-            <Book time={selectTheDate} date={selectTheDate}/>
-            <BookAppo/>
+            {/* <Book /> */}
+            <BookAppo time={selectTheDate} date={selectTheDate}/>
             <Footer/>
         </div>
     );
