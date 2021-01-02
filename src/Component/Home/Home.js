@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from '../Head/Header';
+import Doctors from './Doctors/Doctors';
 import Footer from './Footer/Footer';
 import ChildImg from './Services/ChildImg';
 import Doctor from './Services/Doctor';
@@ -15,6 +16,7 @@ const Home = () => {
             <ChildImg/>
             <Doctor/>
             <Testimonial/>
+            <Doctors/>
             <FormField/>
             <Footer/>
             

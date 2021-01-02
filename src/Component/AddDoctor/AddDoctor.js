@@ -23,6 +23,8 @@ const AddDoctor = () => {
     formData.append('file', files);
     formData.append('email', newInfo.email);
     formData.append('name', newInfo.name);
+    formData.append('phoneNumber', newInfo.phoneNumber);
+
 
 
   
@@ -52,11 +54,11 @@ const AddDoctor = () => {
           </Form.Group>
           <Form.Group controlId="formBasicEmail">
             <Form.Label>Name</Form.Label>
-            <Form.Control onBlur={handleBlur} type="name" name="name" placeholder="Enter Your name" />
+            <Form.Control onBlur={handleBlur} type="text" name="name" placeholder="Enter Your name" />
           </Form.Group>
-          <Form.Group controlId="formBasicPassword">
-            <Form.Label>Password</Form.Label>
-            <Form.Control onBlur={handleBlur} type="password" placeholder="Password" />
+          <Form.Group controlId="formBasicEmail">
+            <Form.Label>Phone Number</Form.Label>
+            <Form.Control onBlur={handleBlur} type="number" name="phoneNumber" placeholder="Enter Your name" />
           </Form.Group>
           <Form.Group>
             <Form.Check  onChange={handleFiles} type="file" name="file"/>

@@ -1,10 +1,8 @@
 import React from "react";
 import "../../../Component/Home/Footer/Footer.css";
-// import FontAwesome from 'react-fontawesome'
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { library } from '@fortawesome/fontawesome-svg-core'
-// import { fab } from '@fortawesome/free-brands-svg-icons'
-// import { faCheckSquare, faCoffee } from '@fortawesome/free-solid-svg-icons'
+import { faPhone, faClock, faGifts } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 
 
 const style = {
@@ -28,7 +26,7 @@ const Footer = () => {
           <div>
             <h4>Social media</h4>
             
-             <a href="#"> consectetur adipisicing.</a> <br/> <br/>
+             <FontAwesomeIcon icon={faGifts}/> <br/> <br/>
            <a href="#">consectetur adipisicing</a> <br/> <br/>
            <a href="#">consectetur adipisicing</a> <br/> <br/>
           </div>
