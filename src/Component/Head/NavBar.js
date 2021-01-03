@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
+import { UserContext } from "../../App";
 
 const NavBar = () => {
+  const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+  console.log(loggedInUser.picture);
   return (
     <nav style={{fontWeight:"700"}} class="navbar navbar-expand-lg navbar-light">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -25,10 +28,9 @@ const NavBar = () => {
         <a class="nav-link mr-5" href="#">Blog</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link mr-5" href="#">Contact with us</a>
+      <img  style={{borderRadius: "50%", height:"2rem", width:"2rem"}} src={loggedInUser.photoURL} alt=""/>
       </li>
-      
-        <div/>
+        
       
      
     </ul>

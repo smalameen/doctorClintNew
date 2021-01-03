@@ -1,8 +1,11 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { Button, Form } from 'react-bootstrap'
+import { UserContext } from '../../App';
 import Sidebar from '../Dashboard/Sidebar/Sidebar'
 
 const AddDoctor = () => {
+  const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+   
   const [newInfo, setNewInfo] = useState({})
   const [files, setFiles] = useState(null)
 
