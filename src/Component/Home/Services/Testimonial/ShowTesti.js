@@ -6,8 +6,11 @@ const ShowTesti = ({review}) => {
         <div>
             <Card style={{width: '18rem', margin:"1rem"}}>
                     <Card.Body>
+                      <Card.Text style={{backgroundColor:"#EC524B"}}>
+                       {review.name}
+                      </Card.Text>
                       <Card.Text>
-                       {review.email}
+                       {review.profession}
                       </Card.Text>
                       <Card.Text>
                        {review.review}
